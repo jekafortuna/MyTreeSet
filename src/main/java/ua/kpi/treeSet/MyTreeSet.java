@@ -18,7 +18,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     public boolean isEmpty() { return size == 0; }
 
     public boolean contains(Object o) {
-
         Node<E> current = root;
         while (current != null) {
             int cmp = ((E)o).compareTo(current.value);
@@ -40,7 +39,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     public void show(Node root, int i){                                     // output non sorted list with layer indexes
-
         if(root != null){
             System.out.println(i + " " + root.value + " ");
             i++;
@@ -54,7 +52,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     public void showSort(Node root){                                        //output sorted list
-
         if(root.left != null){
             showSort(root.left);
         }
@@ -73,7 +70,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     public boolean add(E e) {
-
         if (root == null) {
             size++;
             root = new Node<>(e);
@@ -113,7 +109,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     public boolean remove(Object o) {
-
         Node<E> current = getNode((E) o);
 
         if (current == null) {
@@ -163,7 +158,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     private Node<E> formHighestNode(Node<E> deleted) {
-
         Node<E> current = deleted.right;
         Node<E> insertable = deleted.left;
 
@@ -235,7 +229,6 @@ public class MyTreeSet<E extends Comparable<E>> implements Set<E> {
     }
 
     private class CurrentIterator<E> implements Iterator<E> {
-
         ArrayList<E> currentList;
         int current;
 
